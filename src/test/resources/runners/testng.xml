@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Data Driven Basics">
-    <test verbose="2" preserve-order="true" name="Login Test">
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+        <listener class-name="com.automation.practice.listeners.CustomListeners"/>
+    </listeners>
+
+    <test verbose="2" name="Login Test">
         <classes>
-            <class name="com.w2a.testcases.LoginTest"></class>
+            <class name="com.automation.practice.testcases.BankManagerLoginTest"/>
+        </classes>
+    </test>
+
+    <test verbose="2" name="Add Customer Test">
+        <classes>
+            <class name="com.automation.practice.testcases.AddCustomerTest"/>
+        </classes>
+    </test>
+
+    <test verbose="2" name="Open Account Test">
+        <classes>
+            <class name="com.automation.practice.testcases.OpenAccountTest"/>
         </classes>
     </test>
 </suite>
